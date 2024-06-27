@@ -76,6 +76,9 @@
 # Modify pam configuration (allows wheel group users to use the su command without requiring the root password)
   edit /etc/pam.d/su
 
+#auth           requisite       pam_group.so            no_warn group=wheel root_only fail_safe ruser
+auth            sufficient      pam_group.so            no_warn group=wheel root_only fail_safe ruser
+
 # Test 'su' access for setup user
 # Use ifconfig to remote login as setup user and gain root access
 
