@@ -1,2 +1,2 @@
 # FreeBSDServer
-Creates a base FreeBSD Server for rapid testing of systems or VMs
+This project is a collection of simple command line instructions to setup a base install of FreeBSD Server. When performed on a VM, a snapshot may be used to create a base for duplication and testing of various server configurations.
