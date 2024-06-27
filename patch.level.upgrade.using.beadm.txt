@@ -1,0 +1,27 @@
+# Create boot environment and activate
+  beadm create PatchLevelUpgrade
+  beadm activate PatchLevelUpgrade
+  beadm list
+  reboot
+  beadm list
+
+# Fetch and install the updates
+  freebsd-update fetch
+  freebsd-update install
+  reboot
+
+# Check the version and patch level of the newly installed kernel
+  freebsd-version -k
+
+# Check the version and patch level of the newly installed userland
+  freebsd-version -u
+
+# Dump system info
+  uname -a
+
+# Rename the boot environment to match the patch level
+  beadm rename PatchLevelUpgrade 14.0-RELEASE-p6
+  beadm list
+
+# Cleanup beadm list
+  beadm destroy 14.0-RELEASE_2024-06-27_122851
