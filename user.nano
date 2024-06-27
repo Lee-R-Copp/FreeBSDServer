@@ -1,0 +1,7 @@
+cat << DELIMITER >> ~/.cshrc
+# Use NANO for editor
+alias   edit  `which nano` -w
+setenv  EDITOR  nano
+
+DELIMITER
+cat ~/.cshrc
