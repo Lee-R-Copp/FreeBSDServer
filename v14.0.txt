@@ -123,3 +123,13 @@ auth            sufficient      pam_group.so            no_warn group=wheel root
 
 # Install 'screen' package (Multi-screen window manager)
   pkg install -y  screen
+
+# Use 'beadm' to perform patch level upgrade (patch.level.upgrade.using.beadm.txt file)
+
+# Use VM host to create a snapshot before performing patch level upgrade
+  freebsd-update fetch
+  freebsd-update install
+  reboot
+  freebsd-version -k
+  freebsd-version -u
+  uname -a
