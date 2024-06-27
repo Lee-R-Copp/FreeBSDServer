@@ -1,0 +1,65 @@
+# Tips
+# --Ensure the system has plenty of ram if using ZFS
+# --Use UFS if running on a VM to avoid ZFS resource requirements
+
+
+# Boot from ISO
+# Welcome
+  install
+
+# Keymap Selection
+  Continue with the default keymap
+  
+# Set Hostname
+  freebsd.home.lan
+
+# Distribution Select
+  none
+
+# Partitioning (choose one...)
+  Auto (ZFS) (ZFS is preferred to support boot environments and their administration using beadm.)
+  Auto (UFS)
+  
+  entire disk
+
+# Partition Scheme
+  GPT
+
+# Partition Editor
+  finish
+  
+# Confirmation
+  commit
+
+# Fetch Distributions
+# Archive extraction
+
+# Root User
+  set password
+
+# Network Conmfiguration
+  set accordingly
+
+# Set clock & timezone
+
+# System Configuration
+  sshd
+  ntpd
+  ntpd_sync_on_start
+  dumpdev
+
+# System Hardening
+  set/clear as needed
+
+# Add User Accounts
+  no
+
+# Final Configuration
+  exit
+
+# Manual Configuration
+  no
+
+# Complete
+  reboot
+  
