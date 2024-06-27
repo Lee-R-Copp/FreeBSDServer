@@ -41,6 +41,7 @@
   set accordingly
 
 # Set clock & timezone
+  set accordingly
 
 # System Configuration
   sshd
@@ -63,3 +64,59 @@
 # Complete
   reboot
   
+# Add user
+  adduser
+  --Username: setup
+  --Shell: tcsh
+
+# Give user su privileges
+  pw user mod setup -G wheel
+  groups setup
+
+# Modify pam configuration (allows wheel group users to use the su command without requiring the root password)
+  edit /etc/pam.d/su
+
+# Test 'su' access for setup user
+# Use ifconfig to remote login as setup user and gain root access
+
+# Modify root and setup accounts
+  chsh -s /bin/tcsh
+
+# Setup basic paths
+  mkdir ~/scripts
+  mkdir ~/setup
+  mkdir ~/source
+
+# Configure Key Based SSH Login
+  ssh-keygen -t rsa
+  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+# Use existing key
+  edit ~/.ssh/authorized_keys
+
+# Configurate user profile (user.cshrc file)
+
+# Setup initial crontab for root (crontab.e file)
+    crontab -e
+
+# Initialize package system
+  pkg update
+
+# Install Standard Package - Boot Environment Administrator Package (only for ZFS systems)
+  pkg install -y beadm
+
+# Install 'sudo' package
+  pkg install -y sudo
+
+# Install 'nano' package
+  pkg install -y nano
+
+# Make nano default editor in user profile (user.nano file)
+
+# Create a Password Generator (genpw file)
+  nano -w /usr/local/bin/genpw
+  chmod 755 /usr/local/bin/genpw
+  genpw
+
+# Install 'screen' package (Multi-screen window manager)
+  pkg install -y  screen
